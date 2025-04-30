@@ -20,27 +20,27 @@ const Welcome = () => {
     const fetchData = async () => {
       try {
         const teamResponse = await axios.get(
-          `${import.meta.env.VITE_APP_BASE_URL}/api/team/all`
+          `${import.meta.env.VITE_APP_BASE_URL}/team/all`
         );
         // console.log("Team:", teamResponse.data);
 
         const servicesResponse = await axios.get(
-          `${import.meta.env.VITE_APP_BASE_URL}/api/services/all`
+          `${import.meta.env.VITE_APP_BASE_URL}/services/all`
         );
         // console.log("Services:", servicesResponse.data);
 
         const reviewsResponse = await axios.get(
-          `${import.meta.env.VITE_APP_BASE_URL}/api/reviews/all`
+          `${import.meta.env.VITE_APP_BASE_URL}/reviews/all`
         );
         // console.log("Reviews:", reviewsResponse.data);
 
         const projectsResponse = await axios.get(
-          `${import.meta.env.VITE_APP_BASE_URL}/api/projects/all`
+          `${import.meta.env.VITE_APP_BASE_URL}/projects/all`
         );
         // console.log("Projects:", projectsResponse.data);
 
         const resumeResponse = await axios.get(
-          `${import.meta.env.VITE_APP_BASE_URL}/api/jobs/applications`
+          `${import.meta.env.VITE_APP_BASE_URL}/jobs/applications`
         );
         // console.log("Resumes:", resumeResponse.data);
 

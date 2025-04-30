@@ -22,7 +22,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/admins/register', formData);
+      const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/admins/register`, formData);
       setSuccess(response.data.message);
       setError('');
     } catch (error) {

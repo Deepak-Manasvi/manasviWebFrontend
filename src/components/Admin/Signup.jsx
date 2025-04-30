@@ -22,7 +22,7 @@ const Signup = () => {
     try {
       if (!showOtpField) {
         // Step 1: Send OTP to Email
-        const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/api/admins/sendOTP`, { email });
+        const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/admins/sendOTP`, { email });
         if (response.data.success) {
           setShowOtpField(true);
           setSuccess("OTP sent to your email");
@@ -33,7 +33,7 @@ const Signup = () => {
         }
       } else {
         // Step 2: Verify OTP and Register
-        const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/api/admins/register`, { name, email, password, otp });
+        const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/admins/register`, { name, email, password, otp });
         if (response.data.success) {
           setSuccess("Signup successful! Redirecting to login...");
           setError("");

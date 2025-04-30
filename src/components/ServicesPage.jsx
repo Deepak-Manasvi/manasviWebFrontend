@@ -17,7 +17,7 @@ const ServicesPage = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/api/services/all`);
+        const response = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/services/all`);
         // Ensure response data is an array
         if (Array.isArray(response.data)) {
           setServices(response.data);

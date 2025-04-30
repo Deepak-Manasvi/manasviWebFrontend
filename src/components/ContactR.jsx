@@ -39,7 +39,7 @@ const ContactR = () => {
     console.log(formData)
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_APP_BASE_URL}/api/contacts/create`,
+        `${import.meta.env.VITE_APP_BASE_URL}/contacts/create`,
         formData
       );
       setSuccess("Message sent successfully");

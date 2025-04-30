@@ -16,7 +16,7 @@ export default function Portfolio() {
 
     const fetchPortfolios = async () => {
       try {
-        const response = await axios.get(`${baseAddress}/api/portfolio/all`);
+        const response = await axios.get(`${baseAddress}/portfolio/all`);
         
         console.log("API Response:", response.data); // Debugging log
 

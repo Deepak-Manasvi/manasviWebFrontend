@@ -27,7 +27,7 @@ const CreateProducts = () => {
 
     try {
 
-      const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/api/projects/create`, formData, {
+      const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/projects/create`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${localStorage.getItem('token')}`,

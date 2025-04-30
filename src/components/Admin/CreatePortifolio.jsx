@@ -27,7 +27,7 @@ const CreatePortfolio = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_APP_BASE_URL}/api/portfolio/create`,
+        `${import.meta.env.VITE_APP_BASE_URL}/portfolio/create`,
         formData,
         {
           headers: { 'Content-Type': 'multipart/form-data' },

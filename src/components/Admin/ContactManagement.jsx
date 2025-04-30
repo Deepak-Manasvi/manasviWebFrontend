@@ -18,8 +18,7 @@ const ContactManagement = () => {
 
   const fetchContacts = async () => {
     try {
-      const response = await axios.get("/api/contacts/all");
-      console.log(response, "/api/contacts/all");
+      const response = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/contacts/all`);
       setContacts(response.data);
     } catch (error) {
       console.error("Error fetching contacts:", error);
@@ -31,7 +30,7 @@ const ContactManagement = () => {
     try {
       const newContact = { name, address, phoneNumber, email, message };
 
-      const dt = await axios.post("/api/contacts/create", newContact);
+      const dt = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/contacts/create`, newContact);
 
       fetchContacts();
       clearForm();
@@ -46,7 +45,7 @@ const ContactManagement = () => {
       const updatedContact = { name, address, phoneNumber, email, message };
 
       await axios.put(
-        `/api/contacts/update/${selectedContact._id}`,
+        `${import.meta.env.VITE_APP_BASE_URL}/contacts/update/${selectedContact._id}`,
         updatedContact
       );
 
@@ -59,7 +58,7 @@ const ContactManagement = () => {
 
   const handleDelete = async (contactId) => {
     try {
-      await axios.delete(`/api/contacts/delete/${contactId}`);
+      await axios.delete(`${import.meta.env.VITE_APP_BASE_URL}/contacts/delete/${contactId}`);
       fetchContacts();
       clearForm();
     } catch (error) {

@@ -29,7 +29,7 @@ const CareersComponent = () => {
   const showAllCategories = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_APP_BASE_URL}/api/career/showAllCategories`
+        `${import.meta.env.VITE_APP_BASE_URL}/career/showAllCategories`
       );
       setCategories(res.data.categories);
     } catch (error) {
@@ -66,7 +66,7 @@ const CareersComponent = () => {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_APP_BASE_URL}/api/jobs/apply`,
+        `${import.meta.env.VITE_APP_BASE_URL}/jobs/apply`,
         payload,
         {
           headers: {

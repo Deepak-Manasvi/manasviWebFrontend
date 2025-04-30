@@ -16,7 +16,7 @@ const ContactUsData = () => {
 
   const fetchContacts = async () => {
     try {
-      const response = await axios.get("http://localhost:4500/api/contacts/all");
+      const response = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/contacts/all`);
       const sortedContacts = (response.data || []).sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );
@@ -39,7 +39,7 @@ const ContactUsData = () => {
     if (!deleteId) return;
 
     try {
-      await axios.delete(`http://localhost:4500/api/contacts/delete/${deleteId}`);
+      await axios.delete(`${import.meta.env.VITE_APP_BASE_URL}/contacts/delete/${deleteId}`);
       setContacts(contacts.filter(contact => contact._id !== deleteId));
       setShowDeleteModal(false);
     } catch (error) {

@@ -15,7 +15,7 @@ const ProductCarousel = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('/api/projects/all');
+        const response = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/projects/all`);
         console.log(response.data, "productcarausal");
 
         // Check if response data is an array before setting state

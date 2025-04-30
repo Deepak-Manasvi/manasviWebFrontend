@@ -28,7 +28,7 @@ const Login = () => {
       if (loginMethod === "password") {
         payload = { email, password };
 
-        const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/api/admins/login`, payload, { cache: "no-store" });
+        const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/admins/login`, payload, { cache: "no-store" });
         console.log("Login Response:", response);
         setSuccess('Login successful');
         const { token, role } = response.data;
@@ -50,7 +50,7 @@ const Login = () => {
       // If user chooses OTP method, send OTP
       else if (loginMethod === "emailOtp") {
         // First send OTP to the email
-        const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/api/admins/sendOTP`, { email });
+        const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/admins/sendOTP`, { email });
 
         console.log(response.data.success)
         if (response.data.success) {
@@ -66,7 +66,7 @@ const Login = () => {
       
       // If OTP is already sent and user submits the OTP, verify OTP
       else if (loginMethod === "verifyOtp" && otp) {
-        const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/api/admins/verifyOTP`, { email, otp });
+        const response = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/admins/verifyOTP`, { email, otp });
 
         if (response.data.success) {
           setSuccess('OTP verified successfully');

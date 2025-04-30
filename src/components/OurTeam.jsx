@@ -60,7 +60,7 @@ const OurTeam = () => {
     }
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/api/contacts/create`, {
+      const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/contacts/create`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -81,7 +81,7 @@ const OurTeam = () => {
   useEffect(() => {
     const fetchTeams = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/api/team/all`);
+        const response = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/team/all`);
         console.log(response.data)
         if (Array.isArray(response.data)) {
           setTeams(response.data);
